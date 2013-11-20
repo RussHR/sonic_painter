@@ -1,7 +1,21 @@
+Audio freed = new Audio();
+Audio aura = new Audio();
+
 void setup() {
   background(0);
   size(800, 600);
   rectMode(CENTER);
+  
+  String fileExt;
+  if (freed.canPlayType && freed.canPlayType("audio/wav")) {
+    fileExt = ".wav";
+  }
+  else {
+    fileExt = ".ogg";
+  }
+  
+  freed.setAttribute("src", "freed" + fileExt);
+  aura.setAttribute("src", "aura" + fileExt);
 }
 
 void mouseDragged() {
