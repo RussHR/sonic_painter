@@ -13,7 +13,7 @@ void setup() {
   aura = maxim.loadFile("aura.wav");
   aura.setLooping(true);
   
-  freed.volume(0.25);
+  freed.volume(0.2);
 }
 
 void mouseDragged() {
@@ -48,6 +48,8 @@ void mouseDragged() {
   freed.ramp(1, 1000);
   aura.ramp(1, 1000);
   aura.speed((float) 50/dist(mouseX, mouseY, width/2, height/2));
+  
+  freed.setFilter(map(dist(mouseX, mouseY, width/2, height/2), 0, 500, 50, 5000), 1);
 }
 
 void quadDraw(float x, float y, float speed) {
