@@ -1,6 +1,6 @@
 void setup() {
   background(0);
-  size(800, 600, P3D);
+  size(800, 600);
   rectMode(CENTER);
 }
 
