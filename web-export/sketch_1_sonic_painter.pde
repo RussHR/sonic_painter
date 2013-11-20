@@ -14,3 +14,4 @@ void mouseDragged() {
   stroke(red, green, blue, 255);
   line(pmouseX, pmouseY, mouseX, mouseY);
 }
+
