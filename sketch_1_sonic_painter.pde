@@ -16,6 +16,12 @@ void setup() {
   
   freed.setAttribute("src", "freed" + fileExt);
   aura.setAttribute("src", "aura" + fileExt);
+  
+  freed.addEventListener("ended", freedRepeat);
+  aura.addEventListener("ended", auraRepeat);
+  
+    
+  freed.volume = 0.25;
 }
 
 void mouseDragged() {
@@ -43,6 +49,8 @@ void mouseDragged() {
   noFill();
 
   quadDraw(mouseX, mouseY, speed);
+
+  freed.play();
 }
 
 void quadDraw(float x, float y, float speed) {
@@ -82,3 +90,14 @@ void quadDraw(float x, float y, float speed) {
     mouseX + randModx3, height/2+((height/2)-mouseY) - randMody3
   );
 }
+
+void freedRepeat(){
+  freed.load();
+  freed.play();
+}
+
+void auraRepeat(){
+  freed.load();
+  freed.play();
+}
+  
