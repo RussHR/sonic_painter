@@ -1,27 +1,19 @@
-Audio freed = new Audio();
-Audio aura = new Audio();
+Maxim maxim;
+AudioPlayer freed;
+AudioPlayer aura;
 
 void setup() {
   background(0);
   size(800, 600);
   rectMode(CENTER);
   
-  String fileExt;
-  if (freed.canPlayType && freed.canPlayType("audio/wav")) {
-    fileExt = ".wav";
-  }
-  else {
-    fileExt = ".ogg";
-  }
+  maxim = new Maxim(this);
+  freed = maxim.loadFile("freed.wav");
+  freed.setLooping(true);
+  aura = maxim.loadFile("aura.wav");
+  aura.setLooping(true);
   
-  freed.setAttribute("src", "freed" + fileExt);
-  aura.setAttribute("src", "aura" + fileExt);
-  
-  freed.addEventListener("ended", freedRepeat);
-  aura.addEventListener("ended", auraRepeat);
-  
-    
-  freed.volume = 0.25;
+  freed.volume(0.25);
 }
 
 void mouseDragged() {
@@ -51,6 +43,7 @@ void mouseDragged() {
   quadDraw(mouseX, mouseY, speed);
 
   freed.play();
+  aura.play();
 }
 
 void quadDraw(float x, float y, float speed) {
@@ -90,14 +83,3 @@ void quadDraw(float x, float y, float speed) {
     mouseX + randModx3, height/2+((height/2)-mouseY) - randMody3
   );
 }
-
-void freedRepeat(){
-  freed.load();
-  freed.play();
-}
-
-void auraRepeat(){
-  freed.load();
-  freed.play();
-}
-  
