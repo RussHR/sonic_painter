@@ -49,23 +49,23 @@ void quadDraw(float x, float y, float speed) {
   
   quad(
     width/2+((width/2)-mouseX), height/2+((height/2)-mouseY), 
-    width/2+((width/2)-mouseX) + randModx1, height/2+((height/2)-mouseY) + randMody1,
-    width/2+((width/2)-mouseX) + randModx2, height/2+((height/2)-mouseY) + randMody2,
-    width/2+((width/2)-mouseX) + randModx3, height/2+((height/2)-mouseY) + randMody3
+    width/2+((width/2)-mouseX) - randModx1, height/2+((height/2)-mouseY) - randMody1,
+    width/2+((width/2)-mouseX) - randModx2, height/2+((height/2)-mouseY) - randMody2,
+    width/2+((width/2)-mouseX) - randModx3, height/2+((height/2)-mouseY) - randMody3
   );
   
   quad(
     width/2+((width/2)-mouseX), mouseY, 
-    width/2+((width/2)-mouseX) + randModx1, mouseY + randMody1,
-    width/2+((width/2)-mouseX) + randModx2, mouseY + randMody2,
-    width/2+((width/2)-mouseX) + randModx3, mouseY + randMody3
+    width/2+((width/2)-mouseX) - randModx1, mouseY + randMody1,
+    width/2+((width/2)-mouseX) - randModx2, mouseY + randMody2,
+    width/2+((width/2)-mouseX) - randModx3, mouseY + randMody3
   );
   
   quad(
     mouseX, height/2+((height/2)-mouseY), 
-    mouseX + randModx1, height/2+((height/2)-mouseY) + randMody1,
-    mouseX + randModx2, height/2+((height/2)-mouseY) + randMody2,
-    mouseX + randModx3, height/2+((height/2)-mouseY) + randMody3
+    mouseX + randModx1, height/2+((height/2)-mouseY) - randMody1,
+    mouseX + randModx2, height/2+((height/2)-mouseY) - randMody2,
+    mouseX + randModx3, height/2+((height/2)-mouseY) - randMody3
   );
 }
 
