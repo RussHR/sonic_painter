@@ -3,7 +3,7 @@ AudioPlayer freed;
 AudioPlayer aura;
 
 void setup() {
-  background(0);
+  background(35);
   size(800, 600);
   rectMode(CENTER);
   
