@@ -15,10 +15,20 @@ void mouseDragged() {
   // the faster the speed, the thinner the width
   float lineWidth = map(speed, 0, 10, 10, 1);
   lineWidth = constrain(lineWidth, 0, 20);
-  println(lineWidth);
+   
+  // each stroke draws a translucent, dark rectangle
+  // over the canvas 
+  float alpha = map(speed, 0, 20, 0, 2);
+  noStroke();
+  fill(0, alpha);
+  rect(0, 0, width, height);
+  
+  
+  println(alpha);
   
   stroke(red, green, blue, 255);
   strokeWeight(lineWidth);
+  
   line(pmouseX, pmouseY, mouseX, mouseY);
 }
 
