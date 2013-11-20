@@ -1,6 +1,7 @@
 void setup() {
   background(0);
-  size(800, 600);
+  size(800, 600, P3D);
+  rectMode(CENTER);
 }
 
 void mouseDragged() {
@@ -21,14 +22,19 @@ void mouseDragged() {
   float alpha = map(speed, 0, 20, 0, 2);
   noStroke();
   fill(0, alpha);
-  rect(0, 0, width, height);
-  
-  
-  println(alpha);
+  rect(width/2, height/2, width, height);
   
   stroke(red, green, blue, 255);
   strokeWeight(lineWidth);
+  noFill();
+
+  float quadMod = map(speed, 0, 10, 0.1, 1);
   
-  line(pmouseX, pmouseY, mouseX, mouseY);
+  quad(
+    mouseX, mouseY, 
+    mouseX + random(-10*quadMod, 10*quadMod), mouseY + random(-10*quadMod, 10*quadMod),
+    mouseX + random(-10*quadMod, 10*quadMod), mouseY + random(-10*quadMod, 10*quadMod),
+    mouseX + random(-10*quadMod, 10*quadMod), mouseY + random(-10*quadMod, 10*quadMod)
+  );
 }
 
