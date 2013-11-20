@@ -44,6 +44,8 @@ void mouseDragged() {
 
   freed.play();
   aura.play();
+  
+  aura.ramp(1, 1000);
 }
 
 void quadDraw(float x, float y, float speed) {
@@ -82,4 +84,9 @@ void quadDraw(float x, float y, float speed) {
     mouseX + randModx2, height/2+((height/2)-mouseY) - randMody2,
     mouseX + randModx3, height/2+((height/2)-mouseY) - randMody3
   );
+  
+}
+
+void mouseReleased() {
+  aura.ramp(0, 1000);
 }
