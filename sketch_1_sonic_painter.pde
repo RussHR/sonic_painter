@@ -14,7 +14,7 @@ void mouseDragged() {
   
   float speed = dist(pmouseX, pmouseY, mouseX, mouseY);
   // the faster the speed, the thinner the width
-  float lineWidth = map(speed, 0, 10, 10, 1);
+  float lineWidth = map(speed, 0, 20, 10, 1);
   lineWidth = constrain(lineWidth, 0, 20);
    
   // each stroke draws a translucent, dark rectangle
@@ -32,7 +32,7 @@ void mouseDragged() {
 }
 
 void quadDraw(float x, float y, float speed) {
-  float quadMod = map(speed, 0, 10, 0.1, 1);
+  float quadMod = map(speed, 0, 20, 0.1, 1);
   float randModx1 = random(-10*quadMod, 10*quadMod);
   float randModx2 = random(-10*quadMod, 10*quadMod);
   float randModx3 = random(-10*quadMod, 10*quadMod);
@@ -45,5 +45,26 @@ void quadDraw(float x, float y, float speed) {
     mouseX + randModx1, mouseY + randMody1,
     mouseX + randModx2, mouseY + randMody2,
     mouseX + randModx3, mouseY + randMody3
+  );
+  
+  quad(
+    width/2+((width/2)-mouseX), height/2+((height/2)-mouseY), 
+    width/2+((width/2)-mouseX) + randModx1, height/2+((height/2)-mouseY) + randMody1,
+    width/2+((width/2)-mouseX) + randModx2, height/2+((height/2)-mouseY) + randMody2,
+    width/2+((width/2)-mouseX) + randModx3, height/2+((height/2)-mouseY) + randMody3
+  );
+  
+  quad(
+    width/2+((width/2)-mouseX), mouseY, 
+    width/2+((width/2)-mouseX) + randModx1, mouseY + randMody1,
+    width/2+((width/2)-mouseX) + randModx2, mouseY + randMody2,
+    width/2+((width/2)-mouseX) + randModx3, mouseY + randMody3
+  );
+  
+  quad(
+    mouseX, height/2+((height/2)-mouseY), 
+    mouseX + randModx1, height/2+((height/2)-mouseY) + randMody1,
+    mouseX + randModx2, height/2+((height/2)-mouseY) + randMody2,
+    mouseX + randModx3, height/2+((height/2)-mouseY) + randMody3
   );
 }
